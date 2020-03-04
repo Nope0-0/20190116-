@@ -1,0 +1,27 @@
+﻿生成启动时间为 2019/6/23 12:30:42。
+     1>项目“D:\VSproject\20190116飞机大战\20190116飞机大战\20190116飞机大战.vcxproj”在节点 2 上(Build 个目标)。
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\VSproject\20190116飞机大战\Debug\20190116飞机大战.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\VSproject\20190116飞机大战\Debug\20190116飞机大战.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\VSproject\20190116飞机大战\Debug\20190116飞机大战.lib" /MACHINE:X86 "Debug\20190116飞机大战.res"
+         Debug\Back.obj
+         Debug\BlastFoePlaneBox.obj
+         Debug\FoePlane.obj
+         Debug\FoePlaneBig.obj
+         Debug\FoePlaneBox.obj
+         Debug\FoePlaneMid.obj
+         Debug\FoePlaneSmall.obj
+         Debug\Gunner.obj
+         Debug\GunnerBox.obj
+         Debug\PlaneApp.obj
+         Debug\Player.obj
+         Debug\ToolBase.obj
+         Debug\ToolBoom.obj
+         Debug\ToolMovie.obj
+         Debug\ToolStar.obj
+         Debug\WinMain.obj
+         LINK : 没有找到 D:\VSproject\20190116飞机大战\Debug\20190116飞机大战.exe 或上一个增量链接没有生成它；正在执行完全链接
+         20190116飞机大战.vcxproj -> D:\VSproject\20190116飞机大战\Debug\20190116飞机大战.exe
+     1>已完成生成项目“D:\VSproject\20190116飞机大战\20190116飞机大战\20190116飞机大战.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.61

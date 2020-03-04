@@ -1,0 +1,927 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<logicalClassDesignerModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/ModelStore" dslVersion="1.0.0.0" Id="c9251167-c198-4224-ae28-e6ab3455cb0b" name="UMLClassDiagram1" linkedPackageId="aaeb22f4-4f47-4238-bfde-599497efef7c" xmlns="http://schemas.microsoft.com/dsltools/LogicalClassDesigner">
+  <ownedCommentsInternal>
+    <comment Id="0bf419b4-43b5-40d5-b3d2-cfb7597e340b">
+      <elementDefinition Id="f1895681-57fa-445b-9e9c-5e6ae3aecd54" />
+      <body>1.看得见的类
+2.看不见的类
+3.类之间的关系
+4.确定类中的成员</body>
+    </comment>
+    <comment Id="04af309b-1313-4bd8-a661-6613cf9205df">
+      <elementDefinition Id="e3aa1ca6-c0a2-4ddd-b541-d72a1984fccc" />
+      <body>1.ContraApp是魂斗罗的APP，继承CGameApp，该对象代表一个游戏，包括游戏的创建，绘图，游戏的运行，玩家的操作以及敌人的反应等，并且管理玩家，敌人，子弹等。
+2.在管理敌人的部分，统一类型，提取出父类，让父类调用子类的功能。
+3.为使管理者减负，提出管理层，使管理者面向管理层领导。
+</body>
+    </comment>
+    <comment Id="ad9a53db-beb0-4532-a495-ebc8ce1eeb44">
+      <elementDefinition Id="3a95b28e-f35c-405d-9289-942f3ef155ec" />
+      <body>发射炮弹：
+1.new炮弹对象
+2.炮弹对象初始化
+(HINSTANCE hIns, int x, int y)
+3.加入BulletBox里进行管理</body>
+      <annotatedElements>
+        <classMoniker Id="bc89f6a7-184f-4705-b9b3-475372249ff8" LastKnownName="Bullet" />
+      </annotatedElements>
+    </comment>
+    <comment Id="f8e126c3-344f-4ffa-966a-c15a151c41b6">
+      <elementDefinition Id="4588355a-3c6f-4b81-a149-0bc964d08241" />
+      <body>敌人创建：
+1.new敌人对象
+2.敌人对象初始化
+(HINSTANCE hIns)
+3.加入EnermyBox里进行管理</body>
+      <annotatedElements>
+        <classMoniker Id="4794579a-9125-4faf-b286-5b2143b2f505" LastKnownName="EnermyBox" />
+      </annotatedElements>
+    </comment>
+    <comment Id="8194c017-598a-4527-9ade-217ff4749c52">
+      <elementDefinition Id="5839c35e-f384-4240-bdac-6da6d8ae325e" />
+      <body>+ void hitEnermies()
+包含
++ virtual bool IsHitByBul(Bullet *p_bul)</body>
+      <annotatedElements>
+        <classMoniker Id="c8eb3cc2-b61c-49d6-8658-036101527903" LastKnownName="ContraApp" />
+      </annotatedElements>
+    </comment>
+  </ownedCommentsInternal>
+  <packagedElements>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d715e0bc-791d-4bac-b2a9-41c4df7cd350" name="Player" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="14a3589a-89de-4fdd-86f5-03191e2c38c5" />
+        <suppliersInternal>
+          <dependency Id="556d6ce1-cabe-4ebf-be36-8ff463b84e1d">
+            <classMoniker Id="bc89f6a7-184f-4705-b9b3-475372249ff8" LastKnownName="Bullet" />
+            <elementDefinition Id="ec423fdc-af2f-4d54-a25b-56dd39c805df" />
+          </dependency>
+          <dependency Id="50f7ddc6-eecd-4432-9658-cd51d2c50d31">
+            <classMoniker Id="800b8be3-eb01-400b-8813-dc25d8b0d48e" LastKnownName="BulletBox" />
+            <elementDefinition Id="ad5450a6-c9fa-4311-924c-47abb19f0192" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="56c9284a-9457-488a-8cdd-4fcb2ae25aea" name="HBITMAP m_hBmpPlayer" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a571c937-0801-4241-99d3-007fc3cf804c" />
+          </property>
+          <property Id="c5f15960-818e-4b6d-8ab8-c80d12bd9211" name="int m_nX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1878db5d-1b50-4c48-98ca-ca096a8c225d" />
+          </property>
+          <property Id="9c62f622-8917-4e5c-af61-c629d6a9f8cb" name="int m_nY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="2ef95103-e150-49ec-8075-5ebdf21a4cec" />
+          </property>
+          <property Id="097746e3-80d1-41cf-a621-d7ffdf20d87d" name="int mBulType" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="883fc142-6207-4e94-895d-18d42a1d21aa" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="5389b6ec-1aa2-43b3-9f52-e41eaa54ae19" name="void P_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6bdd8c71-1b2d-4b8d-a864-879bb712286a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d60ee205-3db1-42cb-ae3b-ead6c6f637c2" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="61d469d2-470c-48d7-8d3b-c94551a603d5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f9a41e42-e54c-4203-b765-81598dbce545" name="void P_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="bc649518-f318-4313-9f79-73f9fa38c704" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5410fb59-cc59-4781-ac76-c98d690f63aa" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="28d8707c-0d5e-41a8-a526-7318906c8727" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="554eff21-db29-4c19-b751-cc21c9ab25c5" name="void P_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="82088ab9-c0cf-4f8e-88f1-2b9cd43d5b1d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="19da6fd7-6f90-4c50-8af0-f52139190703" name="int nFX" direction="In" isUnique="false">
+                  <elementDefinition Id="229240a1-8fe1-47ea-acf1-c9c562ce2782" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="be84492d-9874-4aed-9d58-525f3eb913ad" name="void P_Shoot" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="38ec32d8-6e95-4e6c-9b38-41338c85419b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="fec4da3b-c666-47f2-bf60-44ec82870f82" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="621fdc77-9ac1-467a-8aa8-f2407ef7c17b" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="c6dad629-6b1d-4c7a-bfba-ddb6e8abe8d2" name="BulletBox &amp;bulletBox" direction="In" isUnique="false">
+                  <elementDefinition Id="4066f64a-447e-4386-9e77-3e02b7fd5047" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="bc89f6a7-184f-4705-b9b3-475372249ff8" name="Bullet" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="f1f4ac22-2fb1-4f6f-9b24-4d05b9b02a2a" />
+        <ownedAttributesInternal>
+          <property Id="fed80d5e-6627-4336-97cc-2ee4a03e6991" name="HBITMAP m_hBmpBullet" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="6985853b-9c73-46fd-95b4-31d65f98a9e9" />
+          </property>
+          <property Id="67093d0b-6c2b-4589-b89e-c657c37ce536" name="int m_nX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bee773df-f3d5-4977-9932-bc937de284ad" />
+          </property>
+          <property Id="b4801c8e-0033-459e-8d2a-ff755548a41e" name="int m_nY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="90eea78b-0555-4c44-b6fc-af474e499cb3" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="daaabfb4-5921-478b-8718-2e8c647f145e" name="void BullInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0304e506-c989-499f-8374-2dfa6ba79b0d" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="029d7984-1a03-46b0-8d02-1c315bd58841" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="eb9b8183-9043-4eae-93ff-5bcf6b774473" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="863961f8-1194-4069-b716-974f966251e6" name="int x" direction="In" isUnique="false">
+                  <elementDefinition Id="0506ec40-abdf-4085-81b3-4eadc67d68c6" />
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="86c5a21b-ea91-44f3-ba50-b21db46a66f3" name="int y" direction="In" isUnique="false">
+                  <elementDefinition Id="4affa07d-729a-48ee-8cef-43556babeb10" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c340adeb-1392-4167-9745-102613f48d38" name="void P_BullMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="208ad352-9182-4336-a2aa-af30576ca65a" />
+          </operation>
+          <operation Id="cdec26f6-c42e-4bd2-ac71-85e8bdf1b2fa" name="void BullShow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c3d1dc38-85eb-4c1e-bd56-a3bafda5728c" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="87912a24-40f6-4101-b7e7-af576e80d629" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="1e3f29da-b24b-4394-8479-5962f921263b" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e76e2e86-f125-48ba-b6d0-078681cc7a07" name="void E_BullMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="0b389577-b097-4098-92ff-461274cc131c" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="f79f5e8f-a3ac-452b-a9d1-f6119a1169a1" name="Cannon" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="aaa64303-dcc7-410d-a309-e6ed437c5b43" />
+        <generalsInternal>
+          <generalization Id="d8fa7eef-abb7-41a8-8d00-776cde6fe97d" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="8c645c03-af06-447f-a9c9-cdc702e5a94c" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="4116236f-a5c7-4207-8c7e-11234e1c8aa4" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="991f3487-63a0-4233-915a-424fb1ce6351" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b8ef759c-24a3-4d95-b2e8-1893eaf86e60" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="20fbc414-1cc2-487f-981d-d496f421dba3" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="091844ec-bf7d-4e4a-868b-990d1044f718" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="98dd2af5-6ba1-488a-85cd-1391e03332c3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="732d5a42-a917-46ec-a036-2bd434e5043b" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="86b05795-f3de-4685-b381-8da19a35505f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="eb3b29ef-188b-48e3-9c85-58a5462cc065" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4045f0a7-7132-4da9-81ab-519091660f1b" />
+          </operation>
+          <operation Id="3e7a5742-dafd-4fa9-8590-4392bbd56fbf" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="80f34862-8bfb-431c-ac6e-7b55d2bff2f3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="abec4dbc-8b10-420e-a82d-f66c4adcd030" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="eb58715d-9e42-4043-a548-5352b00676b4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="662c4dcd-a4dc-4f24-9fd2-f7d13486f7b9" name="virtual bool IsHitByBul" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="52f25ef2-5618-40e3-bc8e-57dfd155e66a" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="90a8ab21-f010-4432-be6e-52fe5ba0b3e8" name="Bullet *p_bul" direction="In" isUnique="false">
+                  <elementDefinition Id="5d79c0d4-f030-49a5-bf7e-3eed967a1d92" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="079e7d38-63c4-4d0d-8ab6-a252da96ffe1" name="Grenader" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="fdb26b18-1ecb-44ae-b522-98e8f923768a" />
+        <generalsInternal>
+          <generalization Id="3d2dbddf-f17f-4272-a0bc-1d7f1c7f98a4" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="2bbf0649-0054-468c-a886-6bf02264ccf2" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="98bf54f7-684b-4e40-8615-899ad4077550" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="73c4017b-e7ad-49e7-b68c-daea4775c952" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="7c1afd04-2ee3-407e-b737-59bd91184177" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="ceb92d2d-a807-4d2f-80f6-40ca3f070013" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0ac06ff5-c5e1-42ec-8f6b-134a26ebace3" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9d24911d-122f-452b-bf42-8834add00016" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="d1aec420-12bb-4067-892c-0471fa0c6892" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="df601bab-c63e-43d5-95d5-7140693e6af7" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="741dbbcc-9b28-4364-9884-28ce7b744ac6" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="27d603e6-ccdf-40f7-b60b-f5abdbe40a52" />
+          </operation>
+          <operation Id="e53e2c77-4ddd-4a12-a22f-098d919dfbaf" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9936d13e-db3d-4ed6-816f-166f620adbe6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9acf7289-db92-4fe6-939b-38790e5c3675" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="07f400e0-eee6-44a1-8437-07613a1032a5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a36575d1-93af-40b9-95b8-e438555e1dba" name="virtual bool IsHitByBul" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="c1510c83-be41-42e1-87bb-2410d3bc5eb4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8bb5b4fb-dd31-4529-a55f-df060d08f356" name="Bullet *p_bul" direction="In" isUnique="false">
+                  <elementDefinition Id="224376ba-547c-4de4-84bb-b39a302fd717" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="986d5d13-4a93-423a-aba2-99f5d64ae142" name="Bridge" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="ffca38a8-188a-4207-870e-0ddc75aab7e2" />
+        <generalsInternal>
+          <generalization Id="f90ac01a-083b-42ec-9188-9f4e74bebb72" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="7ad088ed-6ef0-4016-a8dd-9d0017258041" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="a0547594-3278-4ebe-88ed-02b6e6278f2f" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="50807190-1c64-4ee2-9405-15ae126fe854" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="503fbe1c-80cb-402d-b4cd-baa4f784d27a" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="95178b58-f8be-413d-9a37-404dd47e348e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="61581f00-7204-4b7d-8074-f5ea57b05ca4" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="06a47420-5021-4986-a757-90ba76873293" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5d774d35-6e36-4aa5-bdee-1bde60fb5b53" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="ef18b4a0-08a3-45e7-a30f-ae2984eafea0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="e135bd60-d69d-4b9c-aa11-2400c64f2072" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b492b4f8-b65c-4fbe-8ba2-2aa98173460e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="ecc6b5b1-da0e-461a-b355-5f4a8dba211e" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="310f9d5f-b0ed-4704-abcd-f7856afd772f" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="03d95972-8526-49bb-8aa2-323b1351528c" name="Boss1" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="bfab4a75-8f36-4823-9ca3-67404fccd45e" />
+        <generalsInternal>
+          <generalization Id="ce1580d7-9a70-4337-b014-8a52346a34ff" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="8bfb1a9d-5962-43b1-a700-4248c1d86c56" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="1096db22-52f7-472f-af7f-b2473c82ef9c" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8160c6c2-3901-44a0-a985-788ff678a538" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="732487ee-4c0b-4ad9-a07e-de9d42d03f04" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="84e7f3b1-e9fe-44ce-b7bc-53ce93344d87" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="4b170055-a9e0-4c0e-88e3-78834e88a3af" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ac2c8aa1-5c9a-4238-b22c-61de6673e9e4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="10dc7e0c-f22c-41f0-a183-1541ae8edd94" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="0999f343-c171-4630-ac62-0768d7af4416" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="48332abf-7cce-484c-9cfd-8c05b91e6575" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d0c29095-9904-4fef-b845-7a904f61b436" />
+          </operation>
+          <operation Id="8d814d19-a165-4ecb-810b-baa76c293a7b" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5d06ca23-7dc7-46ab-9967-f86177b2dadb" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="a2e9c67d-bd57-44c8-9bad-3a45151b5e05" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="321a0035-c9a2-49e5-a5f3-ae69af40991a" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="06670b70-c129-4ffd-af98-1b3999954b0e" name="virtual bool IsHitByBul" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ab04eb9b-02c5-426e-a317-197c55c32e30" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3619db79-196b-49d7-8a54-ba363390a5f9" name="Bullet *p_bul" direction="In" isUnique="false">
+                  <elementDefinition Id="22a88f54-654f-4323-99c6-b371584d0ff4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="994c44d6-3ae5-40b1-8535-8a701ec8921e" name="Bonus" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="719f1d3b-f16b-4e9a-a5bc-8487f6b4dba5" />
+        <generalsInternal>
+          <generalization Id="907b3792-b9bd-4b27-aabf-4b88d41174b9" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="c85614db-c62d-4f06-9abf-0bc00d09fb4d" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="bf69315b-34d7-44ac-adee-59d5881f6857" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e34f9df7-b60a-427f-a229-e5e8d919fe4b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="f36b3c00-e302-4926-8a92-3b55edc0c3f2" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="224ab053-1f93-4209-83a5-16c4c95ce63e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="48da4442-20eb-473f-908f-731402bf1efa" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ae421f1a-c664-4702-b8f9-0ec5dc899848" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="cdb1a7d7-e374-4de6-a1dc-0c8224149303" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="9d53cef2-1c51-4ad0-aeb7-dd6bd577072e" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6137c72f-d4f4-4ca4-9347-51dc98d30d63" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="28adab66-5a56-4af1-a212-24135ed6950d" />
+          </operation>
+          <operation Id="54348a80-ab56-4b01-90f8-bc02cfa46614" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="09be2b0b-8114-496b-af76-da60495aa1ff" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="6bd6d7bd-8d75-46e2-9f13-ca4fee29cd13" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="b06c290d-03e2-409f-8f0a-04eabedad6d9" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="d110e60c-86dd-492a-84dd-943d69c6725f" name="Back" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="1555f11c-731d-4742-84cd-9950e9f5ca52" />
+        <ownedAttributesInternal>
+          <property Id="87472347-0016-44cf-b7d4-9a291a8bf931" name="HBITMAP m_hBmpBack1" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="93f2bd50-277f-4f29-b0e1-70332c168787" />
+          </property>
+          <property Id="8cfb275c-2935-483f-b6c6-06be822966d2" name="HBITMAP m_hBmpBack2" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="bcae9e3f-4a88-4595-b580-f1cbf28fef3c" />
+          </property>
+          <property Id="7292bed6-7adf-4bb5-a990-8f9add5a7928" name="int m_nX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="71a27f02-5363-4f0f-9e8b-cdf3f9672428" />
+          </property>
+          <property Id="ba2c5df2-c155-443a-bc78-62e780ffacb9" name="int m_nY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="a31968cd-c44d-4ca3-8e14-a478a03bc778" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="434ca337-3fe7-4e0e-916e-f4074bda6d49" name="void BackInit" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d49fdbf1-2a3a-4a79-b547-df95e0a52906" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="593d39bb-aefa-4496-a896-11a123aa97f4" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="47993578-948a-4e9b-839f-29d83c710687" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f6c2bf7c-0323-4c6b-8723-6851c7cf3765" name="void BackShow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="7c5231f8-8801-4901-98da-8fc825050dd4" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="bd139cb4-9786-4020-91fe-0fbd36f9ddf7" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="0f57039a-7be2-442e-929c-d99d94f20552" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="323732c2-9f57-47b7-90ea-6aaf15b5e5cd" name="void BackMove" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2363b488-bcba-4826-baa1-67494014e476" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <Interface Id="75b95cc1-70a5-4316-8f91-89bfe76c311a" name="CGameApp" isAbstract="false" isLeaf="false">
+        <elementDefinition Id="c1e42d5a-7ffb-4c1e-85c4-5cd72da56f86" />
+      </Interface>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="c8eb3cc2-b61c-49d6-8658-036101527903" name="ContraApp" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="14b976a9-1753-4508-8fbf-209957cbe17e" />
+        <suppliersInternal>
+          <interfaceRealization Id="d64f4de8-2c14-42d1-ac72-fa407d3cccea">
+            <interfaceMoniker Id="75b95cc1-70a5-4316-8f91-89bfe76c311a" LastKnownName="CGameApp" />
+            <elementDefinition Id="35c8210f-c21e-41db-b228-453059fc9f88" />
+          </interfaceRealization>
+        </suppliersInternal>
+        <targetEnds>
+          <association Id="ca4d45c8-5de0-4fbe-ab65-31ce29d2b66c" isDerived="false" sourceEndRoleName="ContraApp" targetEndRoleName="Back" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d110e60c-86dd-492a-84dd-943d69c6725f" LastKnownName="Back" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="39eef10f-371d-4c4a-a3a6-426342b3a7dd" name="ContraApp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4948d918-0e7d-4fde-890f-725ebfce97f5" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="1fad47c8-fe15-4567-9edb-3abb132df162" name="Back" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="3b6cf9b6-8232-4aa1-8c80-bc2d2833a9c4" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="08a5645c-4ad4-43bc-8720-10bb11ac18b6" />
+          </association>
+          <association Id="a9fb8048-1e6f-4b55-ab07-f6bd25c9ccc2" isDerived="false" sourceEndRoleName="ContraApp" targetEndRoleName="Player" isLeaf="false" isAbstract="false">
+            <classMoniker Id="d715e0bc-791d-4bac-b2a9-41c4df7cd350" LastKnownName="Player" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9f05e0b1-b22e-4b73-bcf5-cbd3dba95b49" name="ContraApp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="790211b8-c3ac-4176-8bd4-4cf6c6232517" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="10c5a93d-0d92-419a-a466-b489edecaa20" name="Player" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="a1eadb2b-eb27-4caf-a23f-b7a0dcf61a21" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="c958d290-67d6-4e29-9898-86150035b763" />
+          </association>
+          <association Id="3bb9c42e-810a-4046-87ee-b571d9515481" isDerived="false" sourceEndRoleName="ContraApp" targetEndRoleName="BulletBox" isLeaf="false" isAbstract="false">
+            <classMoniker Id="800b8be3-eb01-400b-8813-dc25d8b0d48e" LastKnownName="BulletBox" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="9d6f6c36-31a2-4f0d-954e-d364ea24d420" name="ContraApp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="cbbbf137-2340-45de-aed7-165972fb1ed6" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="ca5895f7-1eed-4d75-b9d4-9cff693e0dfe" name="BulletBox" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="b4cc4d0b-7e3f-46c9-8451-9f63b44b4c78" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9990c4f2-5aad-4ec2-842e-ef1ed2f90b44" />
+          </association>
+          <association Id="b9ec3da1-297c-4a4c-9f37-9ce15a226ed6" isDerived="false" sourceEndRoleName="ContraApp" targetEndRoleName="EnermyBox" isLeaf="false" isAbstract="false">
+            <classMoniker Id="4794579a-9125-4faf-b286-5b2143b2f505" LastKnownName="EnermyBox" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d89892d7-0981-4834-b2e8-55c808da3f28" name="ContraApp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="2e8d0d20-43e3-41ec-8839-c0dcd4f5a271" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="b3ab72e0-6963-4122-9f5e-fe42db141f7a" name="EnermyBox" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="cb94542a-ec2f-4df2-8840-56a4b75bb1eb" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="2459b4ae-4e24-406b-9893-dfbbe6c3ca00" />
+          </association>
+          <association Id="7ff8bb3c-a5ab-4645-bc26-4d48d653be0e" isDerived="false" sourceEndRoleName="ContraApp" targetEndRoleName="Enem_Dead_Box" isLeaf="false" isAbstract="false">
+            <classMoniker Id="5f4bc599-4b49-425c-8869-aa9326448297" LastKnownName="Enem_Dead_Box" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="36aea591-5a0b-4911-ab4a-b552a5bc54dc" name="ContraApp" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Composite" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="5ef97f67-e4f2-4c70-9624-3ae061bb52f8" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="637120fa-327a-4dfa-8d1f-2b061311543b" name="Enem_Dead_Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="true">
+                  <elementDefinition Id="1759c76f-e041-4ac2-9206-1f45d09838af" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="6d58f868-2f5d-4d49-893a-ae35666f1a44" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="a44fedad-1df8-4813-8ab4-db708d6e0661" name="Player m_player" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="fb86f9ef-fa4e-47cb-86cf-8e0de3a5e671" />
+          </property>
+          <property Id="c022a939-1107-40aa-905c-d2fd414c410f" name="BulletBox m_bulletBox" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="77c068d2-1fcc-4463-b42f-71a879621397" />
+          </property>
+          <property Id="22507936-d249-41ca-b491-cbde64df10ab" name="Back m_back" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="709a4a1d-14d7-4e07-a67b-52188b7f6f43" />
+          </property>
+          <property Id="a25c6f47-8f9d-4c69-89c6-7ac44fb9a7f6" name="Enem_Dead_Box m_enem_dead_box" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="7dac3541-73fd-43d2-ba49-e7f9239eea43" />
+          </property>
+          <property Id="45aa9835-3bb6-49ba-b259-a685dddb7550" name="EnermyBox m_enermybox" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="64180c86-ebbb-4de2-8121-2ae43ef7a1b2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="fd030b83-9921-4d30-99dd-75a9b3305444" name="void onGameCreate" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="9cb30e73-8f1c-47b8-a401-4e2358c92095" />
+          </operation>
+          <operation Id="3dc3d6e1-1e89-4436-97be-b1139e0b4c9b" name="void onGameRun" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4654df5d-7b82-4cec-82b6-acf1eba617d6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="72194365-949d-47a3-8832-189efecb40cc" name="WPARAM nTimerID" direction="In" isUnique="false">
+                  <elementDefinition Id="dbf2096a-a35d-47d8-9bb2-fea061f8aed0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="85f28946-1830-4402-9e27-9ce979dc7929" name="void onGameShow" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="d4588d6d-f96d-4c61-b025-694d811a183e" />
+          </operation>
+          <operation Id="cb1faf28-0b72-4493-820f-7c0fffa97cc3" name="void onKeyDown" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="dcebd0d8-c351-491c-b5a0-77dfdd6d0771" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="8a84f717-da5f-41ec-99d1-3926db389dff" name="WPARAM nKey" direction="In" isUnique="false">
+                  <elementDefinition Id="6afb4b86-2f2d-4449-b05c-07b8f461c522" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="d6b9d497-babe-47c8-91c5-c1210808c541" name="bool IsOver" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="42687cdd-077e-4fec-b49e-ed36f66e7abb" />
+          </operation>
+          <operation Id="9843c082-6c2a-43e0-8ca8-7fb874b092d4" name="void hitEnermies" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="75ed6fc3-68ef-4abe-b7f2-ded842f952e3" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="800b8be3-eb01-400b-8813-dc25d8b0d48e" name="BulletBox" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="b85732d2-67e6-4edb-b377-6ff57d99e787" />
+        <targetEnds>
+          <association Id="6a3a4e8c-ad4d-40fc-bc2b-81d636d0ef91" isDerived="false" sourceEndRoleName="BulletBox" targetEndRoleName="Bullet" isLeaf="false" isAbstract="false">
+            <classMoniker Id="bc89f6a7-184f-4705-b9b3-475372249ff8" LastKnownName="Bullet" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="d45e1b3b-e888-4b2b-8582-e7b35edc1ffc" name="BulletBox" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="4a096d17-f953-45f8-b561-2b2f5f78c5fe" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="3e441939-995e-4ef9-83f9-feffd77d4ce9" name="Bullet" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="f9035e6b-df81-42db-bd09-02367167d093" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="8630ca64-9a57-48cd-b502-65f360780e49" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="2e630e03-46da-4b02-b77a-866bc9a39298" name="list&lt;Bullet*&gt; m_lst_Bul" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1cab3cb3-9fa9-42a2-8e42-4076eb6025d2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="b49222a0-cbf1-4cd1-9363-16ad4bb4338d" name="void All_Bul_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="43e059f7-8f13-446a-9f4c-0a74039a943b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="9b3d3bc9-b2d3-41b4-a387-901fbd695f5e" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="0b40f0a5-8a27-4d4e-afe7-ab4e69eca255" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="c6817dd9-6559-40d9-b8db-f5a059ee218e" name="void All_Bul_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="18488de3-9ef6-4433-bfb1-5bb0932b2961" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="4794579a-9125-4faf-b286-5b2143b2f505" name="EnermyBox" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="c63d8c4e-21c7-49bf-a3a7-ca7edf716dbd" />
+        <targetEnds>
+          <association Id="1e36be78-a4db-49a4-9e44-644f4de87c61" isDerived="false" sourceEndRoleName="EnermyBox" targetEndRoleName="Enermies" isLeaf="false" isAbstract="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="2bcad016-25c7-499b-8d5d-c8daf2009213" name="EnermyBox" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="d5160ad3-4018-4383-8a3e-963e55d6c8f0" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6fac7d17-aae1-489d-b12e-eab264d9e57e" name="Enermies" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="d5e9f71e-2825-4d19-8e2d-be1cb8311046" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="9a858676-f6da-4a89-a265-b862408a6d00" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="5e75fab8-b471-42db-a46e-f384679dfbfe" name="list&lt;Enermies*&gt; m_lst_Ener" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="1fcdfedf-e33d-41d7-bae4-d362d45cd2d1" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="3cfe7302-1fbd-4537-9bc5-0942f78d6b9d" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="e1a45420-e4e0-4788-bbad-cec6ebc2432d" />
+          </operation>
+          <operation Id="8ff48c09-704c-422a-a7dc-4d3a0f07c29a" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="b4a3d49d-4fea-49c6-9d1c-5a8af31004a3" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="60187d0c-5610-4bfd-9a9d-5eb42d01b7e1" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="0c341f98-e537-4245-a980-93bb56e54005" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="5be196b3-f57d-425c-a821-a57e8a7244d0" name="virtual void E_Create" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="5e3ee930-e6e6-447e-a9c4-6bef2b7905c9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="0d4853b1-15e2-4d33-aff6-8aa721381bdc" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="822ac532-7f4e-44d8-bdaf-c480631135e5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="db15860e-cf39-4c09-94f3-8ca95d774179" name="Enermies" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="38c1a588-8756-4b7e-85fe-b7460a83b04b" />
+        <suppliersInternal>
+          <dependency Id="338f210e-8108-4122-9eb4-d019a8297e0b">
+            <classMoniker Id="d715e0bc-791d-4bac-b2a9-41c4df7cd350" LastKnownName="Player" />
+            <elementDefinition Id="acad6ddc-2df5-4e62-821e-56cd23b66270" />
+          </dependency>
+          <dependency Id="996e9a12-3a66-496d-a511-ba637112a637">
+            <classMoniker Id="bc89f6a7-184f-4705-b9b3-475372249ff8" LastKnownName="Bullet" />
+            <elementDefinition Id="785235aa-484f-4e43-9666-249ee5ae2573" />
+          </dependency>
+        </suppliersInternal>
+        <ownedAttributesInternal>
+          <property Id="78ec7ff3-fcce-4a51-a5cc-80864ed5e362" name="HBITMAP m_hBmpEner" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="d905ecce-0b57-4c12-9215-43902cea1d98" />
+          </property>
+          <property Id="6875f19b-fcd6-4afb-8230-4a82528bf1a0" name="int m_nX" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="90881ef8-5fa6-4840-97c7-fe99f0f8483e" />
+          </property>
+          <property Id="ac6c2482-d298-4768-aaab-17039a3aeb4b" name="int m_nY" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="5c3aa866-d0e7-406a-9bac-54c7c08124fc" />
+          </property>
+          <property Id="6864f668-f829-4ef7-ad69-ab1c8fd5a243" name="int m_nHp" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="70c229ac-1780-4b09-bdbf-b0edab3d49f0" />
+          </property>
+          <property Id="cc98dac2-e0c9-4548-abd6-40b5540e4664" name="int m_nShowID" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="0c03d531-168f-457e-b042-edbecdd7c659" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="755f3a73-ea4f-4cd7-8801-94a50aaa244e" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8d387e2d-824a-4f07-a4c8-f10457d2f479" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="4782c9e4-7ee3-4c21-aaff-fa7c3da8f5ed" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="ac4f7af1-9f3f-40c7-8d9a-0b5856497164" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="0bb4eb0a-eea5-4769-bd22-cc23aa7496d4" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="2023fb2a-6844-4a4f-b709-c5e56891ba7e" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="134841c4-1eac-4018-8d25-48195256a206" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="be7202c0-6586-488a-be63-0ba2db3433c3" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="f4d0a2c7-71f1-40c8-9f26-a1ce49fdfbde" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="ec839b44-3283-4dc2-b0d2-6ebe5b410b2f" />
+          </operation>
+          <operation Id="168f187d-d853-4b7c-a4d2-1c4d414397d5" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="6281ca13-0e4b-436e-87f1-a50f2e58e1ec" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="482e89e9-3b7e-4e81-8cb8-0b4872b70dfa" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="f08092d4-aeb7-4eee-bc00-9f1d8b0038b5" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="a3e4a9e7-3117-4ca2-8d51-73439ce2a389" name="virtual bool IsHitByBul" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="8063f471-2f2e-48b2-84a5-318a544fa0c6" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="e3872f6b-cbe4-49ce-97f3-4c4998d0f648" name="Bullet *p_bul" direction="In" isUnique="false">
+                  <elementDefinition Id="1bd957be-9d55-4964-9c37-aaa52ed47722" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="67914b4e-a394-4475-ad39-dfb6e79d0949" name="void HpDes" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="4c114663-cf29-4eab-8823-7edc924bf616" />
+          </operation>
+          <operation Id="9ccc6b12-14df-47e7-a59c-a272016617dd" name="bool IsDead" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="3446fee6-1986-4bed-b3a9-e183dff59e49" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="5f4bc599-4b49-425c-8869-aa9326448297" name="Enem_Dead_Box" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="4519a9e6-ce1d-4708-9db5-70af323565d6" />
+        <targetEnds>
+          <association Id="06f5239c-b8e8-4dfc-aa90-dc620570f0ae" isDerived="false" sourceEndRoleName="Enem_Des_Box" targetEndRoleName="Enermies" isLeaf="false" isAbstract="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd Id="22ed466a-9afa-482d-b1a1-0f7226461d23" name="Enem_Des_Box" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="Shared" isComposite="false" isNavigableOwned="false">
+                  <elementDefinition Id="3593bae6-cb67-4963-8e49-d5e67bb51325" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd Id="6e571fd6-156d-40f5-a453-2835b4be22cd" name="Enermies" isLeaf="false" isStatic="false" isReadOnly="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+                  <elementDefinition Id="fbbfadb7-7689-436b-8829-52ae3af5f715" />
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+            <elementDefinition Id="e42673a9-9a3e-4f9f-b3a8-f933a5dc4cbe" />
+          </association>
+        </targetEnds>
+        <ownedAttributesInternal>
+          <property Id="16c71b0f-64f2-44d9-b5f3-933264506f20" name="list&lt;Enermies*&gt; m_lst_Dead_Ener" isLeaf="false" isStatic="false" isReadOnly="false" isUnique="false" isDerived="false" isDerivedUnion="false" aggregation="None" isComposite="false">
+            <elementDefinition Id="97852aa0-08f2-423b-85bc-c549ea2068c2" />
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation Id="f1393b31-e82f-41a8-af45-162502f6c2b9" name="virtual void E_Dead_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="892d5813-c9a5-4140-8178-ebe0886463b9" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="3f86063d-be4e-4f75-a1f3-a1a6ca0c4803" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="2f8b3c09-c00d-4b95-babc-c09b1ee850c0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="93365a1f-680f-4f3b-a723-4a0c7dc38892" name="virtual void E_ChangeShowID" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="339221aa-d0a9-4000-a79b-c8fa67e2e9b0" />
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+    <logicalClassDesignerModelHasTypes>
+      <class Id="1c08d9f8-fcd4-4c57-81b3-1ed7bb5b7188" name="Soldier" isAbstract="false" isLeaf="false" isActiveClass="false">
+        <elementDefinition Id="8530d948-ccfa-47d6-a2b6-2b4d198fe9e5" />
+        <generalsInternal>
+          <generalization Id="8a728457-e9eb-4b71-b3f8-fa4f6e3ea61b" isSubstitutable="false">
+            <classMoniker Id="db15860e-cf39-4c09-94f3-8ca95d774179" LastKnownName="Enermies" />
+            <elementDefinition Id="c69c3e4d-2474-4e2a-a58f-a6ab08c5d183" />
+          </generalization>
+        </generalsInternal>
+        <ownedOperationsInternal>
+          <operation Id="c399f2bd-b448-4faa-8b81-53777051aeab" name="virtual void E_Init" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83ac0244-4680-4e25-9140-4e1e7758bb1b" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="5f812c18-7ccd-4714-a343-a866e5b88084" name="HINSTANCE hIns" direction="In" isUnique="false">
+                  <elementDefinition Id="2da6f3fe-d0cb-42a1-950a-18f9e7cd20b0" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="6b410584-cc26-4d8e-977c-fad92d96a90b" name="virtual void E_Show" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="83de1b15-4be4-4d20-8580-41df51781410" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="b5453014-4a5b-4ca9-9447-05a23749b429" name="HDC hMenDC" direction="In" isUnique="false">
+                  <elementDefinition Id="a526e153-03b9-4f52-9ac1-677e3351a112" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="bb7a46ef-d82d-42ce-b783-f8d61442a61a" name="virtual void E_Move" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="049ecd83-64d4-4352-968c-0602eed3d770" />
+          </operation>
+          <operation Id="eb3fa948-3dbf-4075-9ee8-65018486cb26" name="virtual bool IsHitPlayer" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="86dfa142-fc52-4720-a007-5ae567940fb8" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="232b5ca3-2423-422d-a2c2-d4e540823ab6" name="Player &amp;player" direction="In" isUnique="false">
+                  <elementDefinition Id="09c22636-b364-472b-9585-70064cde03c4" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation Id="9bdcba18-85a0-4f85-b9b5-06d022718381" name="virtual bool IsHitByBul" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+            <elementDefinition Id="aa8f5b57-5a5b-4f95-a366-6941727516d0" />
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter Id="23f4e7d8-4793-4f8d-9d0e-6a4e0f611932" name="Bullet *p_bul" direction="In" isUnique="false">
+                  <elementDefinition Id="7ef3bfdd-e8ed-44be-997a-9736646cd526" />
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </logicalClassDesignerModelHasTypes>
+  </packagedElements>
+  <package Id="aaeb22f4-4f47-4238-bfde-599497efef7c" name="ModelingProject1">
+    <elementDefinition Id="4f14bc11-292f-4882-9b1b-cb9c1d864bca" />
+    <profileInstances>
+      <packageHasProfileInstances Id="b6f83620-6326-4d13-99b7-19a91daf9acd">
+        <profileInstance Id="450e6787-51dd-4f3c-a6bb-eaacff702172" name="StandardProfileL2">
+          <elementDefinition Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791" />
+        </profileInstance>
+        <elementDefinition Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b" />
+      </packageHasProfileInstances>
+      <packageHasProfileInstances Id="7d80addb-c7bc-44fc-820c-c4214734d30e">
+        <profileInstance Id="317034ec-53d0-4c78-a76d-56b78ee9f014" name="StandardProfileL3">
+          <elementDefinition Id="532ea607-fb19-44b8-8502-3351b05452be" />
+        </profileInstance>
+        <elementDefinition Id="29349502-908c-4fda-9054-c48619c59ed0" />
+      </packageHasProfileInstances>
+    </profileInstances>
+  </package>
+</logicalClassDesignerModel>
